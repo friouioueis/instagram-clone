@@ -89,7 +89,6 @@ function App() {
       );
   }, []);
 
-  console.log(user);
   return (
     <div className="app">
       <Modal open={open} onClose={() => setOpen(false)}>
