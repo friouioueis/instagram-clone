@@ -4,7 +4,7 @@ import "./Post.css";
 import { db } from "./firebase";
 import firebase from "firebase";
 
-function Post({ postId, user, username, caption, imageUrl }) {
+function Post({ postId, user, username, userImage, caption, imageUrl }) {
   const [comments, setComments] = useState([]);
   const [comment, setComment] = useState("");
 
@@ -36,10 +36,11 @@ function Post({ postId, user, username, caption, imageUrl }) {
     };
   }, [postId]);
 
+  console.log(userImage);
   return (
     <div className="post">
       <div className="post__header">
-        <Avatar className="post__avatar" src={imageUrl} alt={username} />
+        <Avatar className="post__avatar" src={userImage} alt={username} />
         <h3>{username}</h3>
       </div>
       <img className="post__image" src={imageUrl} alt="" />

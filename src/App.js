@@ -89,6 +89,7 @@ function App() {
       );
   }, []);
 
+  console.log(user);
   return (
     <div className="app">
       <Modal open={open} onClose={() => setOpen(false)}>
@@ -178,6 +179,7 @@ function App() {
               key={id}
               postId={id}
               user={user}
+              userImage={post.userImage}
               username={post.username}
               caption={post.caption}
               imageUrl={post.imageUrl}
@@ -202,7 +204,7 @@ function App() {
       </div>
 
       {user?.displayName ? (
-        <ImageUpload username={user.displayName} />
+        <ImageUpload username={user.displayName} userImage={user.photoURL} />
       ) : (
         <center>
           <h3>Sorry you need to login to upload</h3>
