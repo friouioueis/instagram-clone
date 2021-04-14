@@ -34,3 +34,7 @@
 .post__comments {
   padding: 20px;
 }
+
+.app > center > h3 {
+  margin: 20px auto;
+}
